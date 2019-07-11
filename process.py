@@ -11,9 +11,7 @@ aIgnore = ['src']
 
 sArgv = sys.argv[1]
 
-if sArgv == '-test':
-	useful.test()
-elif sArgv == '-l':
+if sArgv == '-html':
 	html.deleteFilesOrDirectories(sFinalRoute, aIgnore)
 	html.loadPagefiles(sTemplateRoute, sInitialRoute, sFinalRoute)
 	html.loadLogs(sFileLog)
