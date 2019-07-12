@@ -1,0 +1,3 @@
+Manual to move from version v0.1.0 to v0.1.1
+
+Ok, updated project.
