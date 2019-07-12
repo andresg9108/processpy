@@ -106,7 +106,7 @@ def loadPagefiles(sTemplateRoute, sInitialRoute, sFinalRoute):
 		sSonInitialRoute = sInitialRoute+'/'+sRoute
 		sSonFinalRoute = sFinalRoute+'/'+sRoute
 
-		loadPagefiles(sSonInitialRoute, sSonFinalRoute)
+		loadPagefiles(sTemplateRoute, sSonInitialRoute, sSonFinalRoute)
 
 def getRoot(sRoute):
 	sRoute = sRoute.replace("./","")
