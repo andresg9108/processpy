@@ -6,7 +6,7 @@ from modules import html
 sTemplateRoute = './pageTemplates'
 sInitialRoute = './pages'
 sFinalRoute = './web'
-sFileLog = './manyp.log'
+sFileLog = './processpy.log'
 aIgnore = ['src']
 
 sArgv = sys.argv[1]

@@ -1,7 +1,10 @@
-Manual to move from version v0.1.0 to v0.1.1
+Manual to move from version v0.1.1 to v0.1.2
 
-1- modules/
-* Delete line: "loadPagefiles(sSonInitialRoute, sSonFinalRoute)"
-* New line: "loadPagefiles(sTemplateRoute, sSonInitialRoute, sSonFinalRoute)"
+1- File: process.py
+* Replace line "sFileLog = './manyp.log'"
+* By "sFileLog = './processpy.log'"
+_________________________
+
+2- Delete file manyp.log in all projects that use processpy.
 
 Ok, updated project.
