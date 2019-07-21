@@ -3,6 +3,12 @@ from modules import useful
 from os import mkdir, remove, path, scandir, getcwd
 
 def loadSQLFile(sFilePath, sFolderPath):
+	sFilePath = sFilePath.replace(" ","").replace("\n","").replace("\t","")
+	sFolderPath = sFolderPath.replace(" ","").replace("\n","").replace("\t","")
+	sLastChar = sFolderPath[-1:]
+	if sLastChar == '/':
+		sFolderPath = sFolderPath[:-1]
+
 	if path.exists(sFolderPath):
 		aFile = useful.lsFiles(sFolderPath)
 		# aFile.reverse()
