@@ -2,4 +2,6 @@ Manual to move from version v0.1.2 to v0.2.0
 
 1- Delete "package-lock.json" file.
 
+2- Check ".gitignore" file.
+
 Ok, updated project.
