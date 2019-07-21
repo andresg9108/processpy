@@ -1,4 +1,5 @@
 import glob, sys, shutil, time
+from modules import useful
 from os import mkdir, remove, path, scandir, getcwd
 
 def getTemplateContent(sTemplateRoute, sInitialRouteHead):
@@ -101,7 +102,7 @@ def loadPagefiles(sTemplateRoute, sInitialRoute, sFinalRoute):
 	oFile.writelines(aContentIndex)
 	oFile.close()
 
-	aInitialRoute = lsDirectories(sInitialRoute)
+	aInitialRoute = useful.lsDirectories(sInitialRoute)
 	for sRoute in aInitialRoute:
 		sSonInitialRoute = sInitialRoute+'/'+sRoute
 		sSonFinalRoute = sFinalRoute+'/'+sRoute
@@ -128,26 +129,11 @@ def getFileContent(sRoute):
 
 def deleteFilesOrDirectories(sRoute, aIgnore = []):
 	if path.exists(sRoute):
-		aSonRoute = lsAll(sRoute)
+		aSonRoute = useful.lsAll(sRoute)
 		for sSonRoute in aSonRoute:
 			bRemove = 1
 			for sIgnore in aIgnore:
 				if sSonRoute == sIgnore:
 					bRemove = 0
 			if bRemove == 1:
-				deleteFileOrDirectory(sRoute+'/'+sSonRoute)
-
-def deleteFileOrDirectory(sRoute):
-	if not path.isfile(sRoute):
-		shutil.rmtree(sRoute)
-	else:
-		remove(sRoute)
-
-def lsDirectories(sRoute = getcwd()):
-    return [oFile.name for oFile in scandir(sRoute) if not oFile.is_file()]
-
-def lsFiles(sRoute = getcwd()):
-    return [oFile.name for oFile in scandir(sRoute) if oFile.is_file()]
-
-def lsAll(sRoute = getcwd()):
-    return [oFile.name for oFile in scandir(sRoute)]
+				useful.deleteFileOrDirectory(sRoute+'/'+sSonRoute)

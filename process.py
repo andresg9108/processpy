@@ -2,6 +2,7 @@
 import sys
 from modules import useful
 from modules import html
+from modules import sql
 
 sTemplateRoute = './pageTemplates'
 sInitialRoute = './pages'
@@ -16,6 +17,13 @@ if sArgv == '-html':
 	html.loadPagefiles(sTemplateRoute, sInitialRoute, sFinalRoute)
 	html.loadLogs(sFileLog)
 
+	print('OK')
+elif sArgv == '-sql':
+	sFilePath = sys.argv[2]
+	sFolderPath = sys.argv[3]
+
+	sql.loadSQLFile(sFilePath, sFolderPath)
+	
 	print('OK')
 else:
 	print('Incorrect command')
