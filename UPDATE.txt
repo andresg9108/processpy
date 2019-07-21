@@ -1,10 +1,5 @@
-Manual to move from version v0.1.1 to v0.1.2
+Manual to move from version v0.1.2 to v0.2.0
 
-1- File: process.py
-* Replace line "sFileLog = './manyp.log'"
-* By "sFileLog = './processpy.log'"
-_________________________
-
-2- Delete file manyp.log in all projects that use processpy.
+1- Delete "package-lock.json" file.
 
 Ok, updated project.

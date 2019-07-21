@@ -1,1 +1,5 @@
 node_modules
+processpy.log
+pages
+web
+modules/__pycache__

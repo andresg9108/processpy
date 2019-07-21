@@ -1,6 +1,6 @@
 {
   "name": "processpy",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Project designed to create processes in console with python.",
   "repository": {
     "type": "git",
