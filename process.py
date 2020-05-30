@@ -22,9 +22,9 @@ try:
 		sFolderPath = sys.argv[3]
 		sql.loadSQLFile(sFilePath, sFolderPath)
 	else:
-		print('Incorrect command')
+		raise Exception("Incorrect command: " + sArgv)
 except Exception as e:
-	print('[Error] An error has occurred.')
+	print('[Error] ' + str(e))
 else:
 	print('[OK] Everything has gone well.')
 finally:

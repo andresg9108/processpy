@@ -7,7 +7,7 @@
 <ol>
 	<li><a href="#Introduction">Introduction.</a></li>
 	<li><a href="#Dependencies">Dependencies.</a></li>
-	<li><a href="#Starting">Starting.</a></li>
+	<li><a href="#ProcessHtml">1) The process html.</a></li>
 </ol>
 
 <h2 id="Introduction">Introduction:</h2>
@@ -20,15 +20,13 @@
 	<li>Python (https://www.python.org): Download Python and add it to the path of your operating system.</li>
 </ol>
 
-<h2 id="Starting">Starting:</h2>
+<h2 id="#ProcessHtml">1) The process html:</h2>
 
-<h3>1) The process html:</h3>
-
-<p></p>
+<p>This command will allow you to create HTML files from others files.</p>
 
 <p>Suppose you downloaded the "processpy" files in the "D:/proyectos/python/processpy/" path and created an "example" folder in the "D:/proyectos/python/example" path. Now you must open a console of your operating system (in this case windows), stand on the "example" folder and run the following command:</p>
 
-<p>python D:/proyectos/python/processpy/process.py -html</p>
+<p>python D:/proyectos/python/processpy/process.py -html (Command #1)</p>
 
 <p>If all goes well, this command should create a couple of files and folders over the current folder (example). Additionally we must create the folder "pageTemplates" inside "example" and a file "index.html" inside "pageTemplates". With this we already have the entire structure which is explained below.</p>
 
