@@ -20,7 +20,7 @@
 	<li>Python (https://www.python.org): Download Python and add it to the path of your operating system.</li>
 </ol>
 
-<h2 id="#ProcessHtml">1) The process html:</h2>
+<h2 id="ProcessHtml">1) The process html:</h2>
 
 <p>This command will allow you to create HTML files from others files.</p>
 
@@ -36,4 +36,16 @@
 	<li>"../web": This folder contains the production files.</li>
 </ul>
 
-<p>Now we can do a couple of tests to see how it works.</p>
+<p>Now we can do a couple of tests to see how it works. Open the file "../example/pageTemplates/index.html" and add the following lines:</p>
+
+'''
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hola Mundo !!!</title>
+	</head>
+	<body>
+		<h1>Hola Mundo !!!</h1>
+	</body>
+</html>
+'''
