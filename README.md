@@ -50,9 +50,9 @@ Now we can do a couple of tests to see how it works. Open the file "../example/p
 </html>
 ~~~
 
-As you can see we have common and current HTML tags except for "'<!--headHTML-->'" and "'<!--bodyHTML-->'", which we will explain next. But first check the file "../example/web/index.html" and you will see that it is empty, run Command #1 again and check this same file again, if everything goes well, you will see how the code has been copied from the template to the production file.
+As you can see we have common and current HTML tags except for "<!-headHTML->" and "<!-bodyHTML->", which we will explain next. But first check the file "../example/web/index.html" and you will see that it is empty, run Command #1 again and check this same file again, if everything goes well, you will see how the code has been copied from the template to the production file.
 
-Now the tags "'<!--headHTML-->'" and "'<!--bodyHTML-->'" tell the template that the tags are in the files "../example/pages/head.html" and "../example/pages/body.html" and to be added respectively. Knowing this, we will modify the following files:
+Now the tags "<!-headHTML->" and "<!-bodyHTML->" tell the template that the tags are in the files "../example/pages/head.html" and "../example/pages/body.html" and to be added respectively. Knowing this, we will modify the following files:
 
 **File: ../example/pages/head.html**
 
