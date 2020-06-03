@@ -10,20 +10,22 @@ sFinalRoute = './web'
 sFileLog = './processpy.log'
 aIgnore = ['src']
 
-sArgv = sys.argv[1]
+try:
+	sArgv = sys.argv[1]
 
-if sArgv == '-html':
-	html.deleteFilesOrDirectories(sFinalRoute, aIgnore)
-	html.loadPagefiles(sTemplateRoute, sInitialRoute, sFinalRoute)
-	html.loadLogs(sFileLog)
-
-	print('OK')
-elif sArgv == '-sql':
-	sFilePath = sys.argv[2]
-	sFolderPath = sys.argv[3]
-
-	sql.loadSQLFile(sFilePath, sFolderPath)
-	
-	print('OK')
+	if sArgv == '-html':
+		html.deleteFilesOrDirectories(sFinalRoute, aIgnore)
+		html.loadPagefiles(sTemplateRoute, sInitialRoute, sFinalRoute)
+		html.loadLogs(sFileLog)
+	elif sArgv == '-sql':
+		sFilePath = sys.argv[2]
+		sFolderPath = sys.argv[3]
+		sql.loadSQLFile(sFilePath, sFolderPath)
+	else:
+		raise Exception("Incorrect command: " + sArgv)
+except Exception as e:
+	print('[Error] ' + str(e))
 else:
-	print('Incorrect command')
+	print('[OK] Everything has gone well.')
+finally:
+	print('Ending.')
