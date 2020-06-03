@@ -4,25 +4,28 @@
 
 ## Content: ##
 
-1. [Introduction.](Introduction "Introduction")
-2. [Dependencies.](Dependencies "Dependencies")
-3. [The process html.](TheProcessHtml "The process html")
+1. [Introduction.](#Introduction "Introduction")
+2. [Dependencies.](#Dependencies "Dependencies")
+3. [The process html.](#TheProcessHtml "The process html")
 
-## Introduction: [Introduction] ##
+<span id="Introduction"></span>
+## Introduction: ##
 
 This project aims to automate repetitive processes or patterns, using the great Python programming language.
 
-## Dependencies: [Dependencies] ##
+<span id="Dependencies"></span>
+## Dependencies: ##
 
 - Python (https://www.python.org): Download Python and add it to the path of your operating system.
 
-## The process html: [TheProcessHtml] ##
+<span id="TheProcessHtml"></span>
+## The process html: ##
 
 This command will allow you to create HTML files from others files.
 
 Suppose you downloaded the "processpy" files in the "D:/proyectos/python/processpy/" path and created an "example" folder in the "D:/proyectos/python/example" path. Now you must open a console of your operating system (in this case windows), stand on the "example" folder and run the following command:
 
-** * python D:/proyectos/python/processpy/process.py -html (Command #1) * **
+***___python D:/proyectos/python/processpy/process.py -html (Command #1)___***
 
 If all goes well, this command should create a couple of files and folders over the current folder (example). Additionally we must create the folder "pageTemplates" inside "example" and a file "index.html" inside "pageTemplates". With this we already have the entire structure which is explained below.
 
