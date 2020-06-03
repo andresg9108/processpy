@@ -117,7 +117,7 @@ If you don't specify a template for each page you create, Command # 1 defaults t
 </script>
 ~~~
 
-See how the first line indicates "'<!--Route: temp2.html-->'", which tells this page which template to use, which in this case is "temp2.html". Now we run Command #1 for the last time and if all goes well, we will have two pages using two different templates.
+See how the first line indicates "<!-Route: temp2.html->", which tells this page which template to use, which in this case is "temp2.html". Now we run Command #1 for the last time and if all goes well, we will have two pages using two different templates.
 
 <span id="TheProcessSql"></span>
 ## The process sql ##
