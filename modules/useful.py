@@ -19,3 +19,11 @@ def lsAll(sRoute = getcwd()):
 def getFileExtension(sFileName):
 	sExtension = path.splitext(sFileName)[1]
 	return sExtension
+
+def readFileAndPrint(sFileName):
+	oFile = open(sFileName, "r")
+	aContent = oFile.readlines()
+	oFile.close()
+	
+	for sLine in aContent:
+		print(sLine)
