@@ -3,6 +3,7 @@ import sys
 from modules import useful
 from modules import html
 from modules import sql
+from modules import rts
 
 sTemplateRoute = './pageTemplates'
 sInitialRoute = './pages'
@@ -24,7 +25,10 @@ try:
 		sFolderPath = sys.argv[3]
 		sql.loadSQLFile(sFilePath, sFolderPath)
 	elif sArgv == '-rts':
-		print('This command is under development.')
+		sFolderPath = sys.argv[2]
+		sSearchText = sys.argv[3]
+		sReplaceText = sys.argv[4]
+		rts.LoadNewTextString(sFolderPath, sSearchText, sReplaceText)
 	else:
 		raise Exception("Incorrect command: " + sArgv)
 except Exception as e:
