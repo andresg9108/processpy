@@ -13,7 +13,9 @@ aIgnore = ['src']
 try:
 	sArgv = sys.argv[1]
 
-	if sArgv == '-html':
+	if sArgv == '-help':
+		print('Help.');
+	elif sArgv == '-html':
 		html.deleteFilesOrDirectories(sFinalRoute, aIgnore)
 		html.loadPagefiles(sTemplateRoute, sInitialRoute, sFinalRoute)
 		html.loadLogs(sFileLog)
@@ -24,7 +26,7 @@ try:
 	else:
 		raise Exception("Incorrect command: " + sArgv)
 except Exception as e:
-	print('[Error] ' + str(e))
+	print('[Error] Use the -help command to get help. ' + str(e))
 else:
 	print('[OK] Everything has gone well.')
 finally:
