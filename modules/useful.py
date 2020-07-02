@@ -26,7 +26,7 @@ def readFileAndPrint(sFileName):
 	oFile.close()
 	
 	for sLine in aContent:
-		print(sLine)
+		print(sLine.replace('\n', ''))
 
 def getFileContent(sRoute):
 	aContent = []
