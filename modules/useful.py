@@ -27,3 +27,11 @@ def readFileAndPrint(sFileName):
 	
 	for sLine in aContent:
 		print(sLine)
+
+def getFileContent(sRoute):
+	aContent = []
+	if path.isfile(sRoute):
+		oFile = open(sRoute, "r")
+		aContent = oFile.readlines()
+		oFile.close()
+	return aContent
