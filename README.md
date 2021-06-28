@@ -6,18 +6,24 @@
 
 1. [Introduction.](#Introduction "Introduction")
 2. [Dependencies.](#Dependencies "Dependencies")
-3. [The process html.](#TheProcessHtml "The process html")
-4. [The process sql.](#TheProcessSql "The process sql")
+3. [Starting.](#Starting "Starting")
+4. [The process html.](#TheProcessHtml "The process html")
+5. [The process sql.](#TheProcessSql "The process sql")
 
 <span id="Introduction"></span>
 ## Introduction ##
 
-This project aims to automate repetitive processes or patterns, using the great Python programming language.
+This project aims to automate repetitive processes or patterns using the great Python programming language.
 
 <span id="Dependencies"></span>
 ## Dependencies ##
 
 - Python (https://www.python.org): Download Python and add it to the path of your operating system.
+
+<span id="Starting"></span>
+## Starting ##
+
+This...
 
 <span id="TheProcessHtml"></span>
 ## The process html ##
