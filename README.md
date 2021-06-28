@@ -17,22 +17,38 @@ This project aims to automate repetitive processes or patterns using the great P
 
 <span id="Dependencies"></span>
 ## Dependencies ##
-
+- Node.js (https://nodejs.org).
 - Python (https://www.python.org): Download Python and add it to the path of your operating system.
 
 <span id="Starting"></span>
 ## Starting ##
 
-This...
+We will start by installing the processpy package in the folder where we want to use it as follows.
+
+~~~
+npm i processpy
+~~~
+
+If all goes well now we can use processpy.
+
+~~~
+python node_modules/processpy/process.py -help
+~~~
 
 <span id="TheProcessHtml"></span>
 ## The process html ##
 
-This command will allow you to create HTML files from others files.
+This command will allow you to create HTML files from other files. To do this we have the following command.
 
-Suppose you downloaded the "processpy" files in the "D:/proyectos/python/processpy/" path and created an "example" folder in the "D:/proyectos/python/example" path. Now you must open a console of your operating system (in this case windows), stand on the "example" folder and run the following command:
+**Command #1**
+~~~
+python node_modules/processpy/process.py -html
+~~~
 
-**python D:/proyectos/python/processpy/process.py -html (Command #1)**
+________________________________
+________________________________
+________________________________
+
 
 If all goes well, this command should create a couple of files and folders over the current folder (example). Additionally we must create the folder "pageTemplates" inside "example" and a file "index.html" inside "pageTemplates". With this we already have the entire structure which is explained below.
 
