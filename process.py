@@ -4,7 +4,7 @@ from modules import useful
 from modules import html
 from modules import sql
 from modules import rts
-from os import mkdir, remove, path, scandir, getcwd
+from modules import help
 
 sTemplateRoute = './pageTemplates'
 sInitialRoute = './pages'
@@ -18,6 +18,7 @@ try:
 	if sArgv == '-html':
 		html.deleteFilesOrDirectories(sFinalRoute, aIgnore)
 		html.loadPagefiles(sTemplateRoute, sInitialRoute, sFinalRoute)
+		html.loadAdditionalFilesAndFolders(sTemplateRoute)
 		html.loadLogs(sFileLog)
 	elif sArgv == '-sql':
 		sFilePath = sys.argv[2]
@@ -29,10 +30,7 @@ try:
 		sReplaceText = sys.argv[4]
 		rts.LoadNewTextString(sFolderPath, sSearchText, sReplaceText)
 	elif sArgv == '-help':
-		if path.isfile('./node_modules/processpy/HELP.txt'):
-			useful.readFileAndPrint('./node_modules/processpy/HELP.txt')
-		else:
-			useful.readFileAndPrint('./HELP.txt')
+		help.showHelpFile()
 	else:
 		raise Exception("Incorrect command: " + sArgv)
 except Exception as e:

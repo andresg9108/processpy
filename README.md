@@ -45,20 +45,15 @@ This command will allow you to create HTML files from other files. To do this we
 python node_modules/processpy/process.py -html
 ~~~
 
-________________________________
-________________________________
-________________________________
-
-
-If all goes well, this command should create a couple of files and folders over the current folder (example). Additionally we must create the folder "pageTemplates" inside "example" and a file "index.html" inside "pageTemplates". With this we already have the entire structure which is explained below.
+If all goes well, this command should create a couple of files and folders above the current folder. With this we already have the entire structure that is explained below.
 
 - "../pages": This folder contains the files that correspond to each page.
 - "../pageTemplates": This folder contains the templates that each of the pages will use.
 - "../web": This folder contains the production files.
 
-Now we can do a couple of tests to see how it works. Open the file "../example/pageTemplates/index.html" and add the following lines:
+Now we can do a couple of tests to see how it works. Open the file "../example/pageTemplates/index.html" and add the following lines.
 
-**File: ../example/pageTemplates/index.html**
+**File: ./pageTemplates/index.html**
 
 ~~~
 <!DOCTYPE html>
@@ -72,9 +67,12 @@ Now we can do a couple of tests to see how it works. Open the file "../example/p
 </html>
 ~~~
 
-As you can see we have common and current HTML tags except for "<!-headHTML->" and "<!-bodyHTML->", which we will explain next. But first check the file "../example/web/index.html" and you will see that it is empty, run Command #1 again and check this same file again, if everything goes well, you will see how the code has been copied from the template to the production file.
+As you can see, we have common HTML tags except for "<!-headHTML->" and "<!-bodyHTML->", which we will explain below. But first check the file "./web/index.html" and you will see that it is empty, execute Command # 1 again and check this same file again, if all goes well, you will see how the code has been copied from the template to the production file.
 
-Now the tags "<!-headHTML->" and "<!-bodyHTML->" tell the template that the tags are in the files "../example/pages/head.html" and "../example/pages/body.html" and to be added respectively. Knowing this, we will modify the following files:
+_______________
+_______________
+
+Now the tags "<!-headHTML->" and "<!-bodyHTML->" tell the template that the tags are in the files "../example/pages/head.html" and "../example/pages/body.html" and to be added respectively. Knowing this, we will modify the following files.
 
 **File: ../example/pages/head.html**
 

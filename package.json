@@ -1,6 +1,6 @@
 {
   "name": "processpy",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "This project aims to automate repetitive processes or patterns using the great Python programming language.",
   "repository": {
     "type": "git",
