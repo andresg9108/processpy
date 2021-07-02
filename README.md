@@ -67,49 +67,46 @@ Now we can do a couple of tests to see how it works. Open the file "../example/p
 </html>
 ~~~
 
-As you can see, we have common HTML tags except for "<!-headHTML->" and "<!-bodyHTML->", which we will explain below. But first check the file "./web/index.html" and you will see that it is empty, execute Command # 1 again and check this same file again, if all goes well, you will see how the code has been copied from the template to the production file.
+As you can see, we have common HTML tags except for "<!-headHTML->" and "<!-bodyHTML->" which we will explain below. But first check the file "./web/index.html" and you will see that it is empty, execute Command # 1 again and check this same file again, if all goes well, you will see how the code has been copied from the template to the production file.
 
-_______________
-_______________
+Now the tags "<!-headHTML->" and "<!-bodyHTML->" tell the template that the tags are in the files "./pages/head.html" and "./pages/body.html" and to be added respectively. Knowing this, we will modify the following files.
 
-Now the tags "<!-headHTML->" and "<!-bodyHTML->" tell the template that the tags are in the files "../example/pages/head.html" and "../example/pages/body.html" and to be added respectively. Knowing this, we will modify the following files.
-
-**File: ../example/pages/head.html**
+**File: ./pages/head.html**
 
 ~~~
 <title>My Page</title>
 ~~~
 
-**File: ../example/pages/body.html**
+**File: ./pages/body.html**
 
 ~~~
 <h1>Hello World!!!</h1>
 ~~~
 
-We execute Command #1 repeatedly and if everything goes well, the changes will be detected in the production file "../example/web/index.html".
+We execute Command # 1 again and all changes will be detected in the production file "./web/index.html".
 
-With all of the above we already know how this command works in general. Now we are going to create a new folder called "page2" in the directory "../example/pages/" and we will execute Command #1 again, this automatically creates two new files inside the new folder, which we will modify like this:
+With all of the above we already know how this command works in general. Now we are going to create a new folder called "page2" in the directory "./pages/" and we will execute Command #1 again, this automatically creates two new files inside the new folder which we will modify like this.
 
-**File: ../example/pages/page2/head.html**
+**File: ./pages/page2/head.html**
 
 ~~~
 <title>This is my page number 2.</title>
 <script>
-	console.log('Hello World!!!');
+  console.log('Hello World!!!');
 </script>
 ~~~
 
-**File: ../example/pages/page2/body.html**
+**File: ./pages/page2/body.html**
 
 ~~~
 <h1>Hello, this is my page number 2.</h1>
 ~~~
 
-Now you can run Command #1 again and if everything goes well you can check the production path "../example/web/", where you can now find two pages with different contents.
+Now you can run Command #1 again and if everything goes well you can check the production path "./web/", where you can now find two pages with different contents.
 
-Last but not least, we will create a new template. In the path "../example/pageTemplates/" we will add a new file called "temp2.html", which will be a new template and will contain the following tags:
+Last but not least, we will create a new template. In the path "./pageTemplates/" we will add a new file called "temp2.html" which will be a new template and will contain the following tags.
 
-**File: ../example/pageTemplates/temp2.html**
+**File: ./pageTemplates/temp2.html**
 
 ~~~
 <!DOCTYPE html>
@@ -118,16 +115,16 @@ Last but not least, we will create a new template. In the path "../example/pageT
     <!--headHTML-->
   </head>
   <body>
-  	<div style="background-color: blue; color: white;">
-  		<!--bodyHTML-->
-  	</div>
+    <div style="background-color: blue; color: white;">
+      <!--bodyHTML-->
+    </div>
   </body>
 </html>
 ~~~
 
-If you don't specify a template for each page you create, Command # 1 defaults to the template "../example/pageTemplates/index.html", but if you want the template "temp2.html" to be taken for the page "page2", the following should be added in the first line of the file "../example/pages/page2/head.html".
+If you don't specify a template for each page you create, Command # 1 defaults to the template "./pageTemplates/index.html", but if you want the template "temp2.html" to be taken for the page "page2" the following should be added in the first line of the file "./pages/page2/head.html".
 
-**File: ../example/pages/page2/head.html**
+**File: ./pages/page2/head.html**
 
 ~~~
 <!--Route: temp2.html-->
@@ -137,7 +134,11 @@ If you don't specify a template for each page you create, Command # 1 defaults t
 </script>
 ~~~
 
-See how the first line indicates "<!-Route: temp2.html->", which tells this page which template to use, which in this case is "temp2.html". Now we run Command #1 for the last time and if all goes well, we will have two pages using two different templates.
+See how the first line ("<! - Route: temp2.html->") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
+
+
+**FROM HERE THE DOCUMENTATION IS UNDER REVIEW.**
+
 
 <span id="TheProcessSql"></span>
 ## The process sql ##
