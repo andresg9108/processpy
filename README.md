@@ -45,13 +45,13 @@ This command will allow you to create HTML files from other files. To do this we
 python node_modules/processpy/process.py -html
 ~~~
 
-If all goes well, this command should create a couple of files and folders above the current folder. With this we already have the entire structure that is explained below.
+This command should create a couple of files and folders on top of the current folder and with this we already have the structure that is explained below.
 
 - "../pages": This folder contains the files that correspond to each page.
 - "../pageTemplates": This folder contains the templates that each of the pages will use.
 - "../web": This folder contains the production files.
 
-Now we can do a couple of tests to see how it works. Open the file "../example/pageTemplates/index.html" and add the following lines.
+Now we can do a couple of tests to see how it works. Open the file "./pageTemplates/index.html" and add the following lines.
 
 **File: ./pageTemplates/index.html**
 
@@ -122,7 +122,7 @@ Last but not least, we will create a new template. In the path "./pageTemplates/
 </html>
 ~~~
 
-If you don't specify a template for each page you create, Command # 1 defaults to the template "./pageTemplates/index.html", but if you want the template "temp2.html" to be taken for the page "page2" the following should be added in the first line of the file "./pages/page2/head.html".
+If you don't specify a template for each page you create, Command #1 defaults to the template "./pageTemplates/index.html", but if you want the template "temp2.html" to be taken for the page "page2" the following should be added in the first line of the file "./pages/page2/head.html".
 
 **File: ./pages/page2/head.html**
 
@@ -134,25 +134,29 @@ If you don't specify a template for each page you create, Command # 1 defaults t
 </script>
 ~~~
 
-See how the first line ("<! - Route: temp2.html->") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
-
-
-**FROM HERE THE DOCUMENTATION IS UNDER REVIEW.**
-
+See how the first line ("<!-Route: temp2.html->") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
 
 <span id="TheProcessSql"></span>
 ## The process sql ##
 
 This command allows you to take all the ".sql" files in a folder and convert them into one file.
 
-Suppose you downloaded the "processpy" files in the "D:/proyectos/python/processpy/" path and created an "example" folder in the "D:/proyectos/python/example" path. Now we will create a folder that we will call "sql", which will be in the path "../example/" and will contain the files you want with the extension ".sql".
+For this example, we will create a new separate directory, install "processpy" for it, and create a folder called "sql" that will contain the files you want with the extension ".sql".
 
 Everything is ready to execute the following command in which "(FILE)" is the final file that contains all the lines of the other files and "(SQL_FILE_PATH)" is the path of the ".sql" files.
 
-**python D:/proyectos/python/processpy/process.py -sql (FILE) (SQL_FILE_PATH) (Command #2)**
+**Command #2**
 
-For this example, the command would look like this:
+~~~
+python node_modules/processpy/process.py -sql (FILE) (SQL_FILE_PATH)
+~~~
 
-**python D:/proyectos/python/processpy/process.py -sql D:/proyectos/python/example/myfile.sql D:/proyectos/python/example/sql**
+For this example, the command would look like this.
 
-If all goes well, you will have a file named "myfile.sql" in the path "D:/proyectos/python/example/", which will contain all the lines of all the files that are in the "sql" folder.
+~~~
+python node_modules/processpy/process.py -sql ./myfile.sql ./sql
+~~~
+
+If all goes well, you will have a file called "myfile.sql" in the current path that will contain all the lines of all the files that are in the "sql" folder.
+
+**FROM HERE THE DOCUMENTATION IS UNDER REVIEW.**
