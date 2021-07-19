@@ -1,7 +1,7 @@
 {
   "name": "processpy",
-  "version": "0.3.1",
-  "description": "Project designed to create processes in console with python.",
+  "version": "0.4.0",
+  "description": "This project aims to automate repetitive processes or patterns using the great Python programming language.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andresg9108/processpy.git"

@@ -2,6 +2,13 @@ import glob, sys, shutil, time
 from modules import useful
 from os import mkdir, remove, path, scandir, getcwd
 
+def loadAdditionalFilesAndFolders(sTemplateRoute):
+	if not path.exists(sTemplateRoute):
+		mkdir(sTemplateRoute)
+		oFile = open(sTemplateRoute+'/index.html', "w")
+		oFile.writelines(['<!--index.html-->'])
+		oFile.close()
+
 def getTemplateContent(sTemplateRoute, sInitialRouteHead):
 	sFile = 'index.html'
 	sKey = '<!--Route:'

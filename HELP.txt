@@ -1,5 +1,5 @@
 
-Processpy commands: Run "py process.py [command]".
+Processpy commands: Run "python process.py [command]".
 
 -help => This command.
 -html => The process html.
