@@ -9,7 +9,7 @@
 3. [Starting.](#Starting "Starting")
 4. [The process html.](#TheProcessHtml "The process html")
 5. [The process sql.](#TheProcessSql "The process sql")
-6. [Replace the string.](#ReplaceTheString "Replace the string")
+6. [Replace text string.](#ReplaceTextString "Replace text string")
 
 <span id="Introduction"></span>
 ## Introduction ##
@@ -160,8 +160,8 @@ python node_modules/processpy/process.py -sql ./myfile.sql ./sql
 
 If all goes well, you will have a file called "myfile.sql" in the current path that will contain all the lines of all the files that are in the "sql" folder.
 
-<span id="ReplaceTheString"></span>
-## Replace the string ##
+<span id="ReplaceTextString"></span>
+## Replace text string ##
 
 This command will allow you to replace a text string in all files in a directory.
 
