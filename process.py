@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 import sys
-from modules import useful
-from modules import html
-from modules import sql
-from modules import rts
-from modules import help
+from python_modules.processpy import useful
+from python_modules.processpy import html
+from python_modules.processpy import sql
+from python_modules.processpy import rts
+from python_modules.processpy import help
 
 sTemplateRoute = './pageTemplates'
 sInitialRoute = './pages'

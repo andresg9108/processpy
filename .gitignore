@@ -1,5 +1,5 @@
 /node_modules
-/modules/__pycache__
+/python_modules/processpy/__pycache__
 /pageTemplates
 /pages
 /web

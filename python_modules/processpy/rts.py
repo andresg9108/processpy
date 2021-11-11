@@ -1,5 +1,5 @@
 import glob, sys, shutil, time
-from modules import useful
+from python_modules.processpy import useful
 from os import mkdir, remove, path, scandir, getcwd
 
 def LoadNewTextString(sFolderPath, sSearchText, sReplaceText):
