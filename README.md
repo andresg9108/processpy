@@ -6,7 +6,7 @@
 
 1. [Introduction.](#Introduction "Introduction")
 2. [Dependencies.](#Dependencies "Dependencies")
-3. [Starting.](#Starting "Starting")
+3. [Getting Started.](#GettingStarted "Getting Started")
 4. [The process html.](#TheProcessHtml "The process html")
 5. [The process sql.](#TheProcessSql "The process sql")
 6. [Replace text string.](#ReplaceTextString "Replace text string")
@@ -21,8 +21,8 @@ This project aims to automate repetitive processes or patterns using the great P
 - Node.js (https://nodejs.org).
 - Python (https://www.python.org): Download Python and add it to the path of your operating system.
 
-<span id="Starting"></span>
-## Starting ##
+<span id="GettingStarted"></span>
+## Getting Started ##
 
 We will start by installing the processpy package in the folder where we want to use it as follows.
 
@@ -48,9 +48,9 @@ python node_modules/processpy/process.py -html
 
 This command should create a couple of files and folders on top of the current folder and with this we already have the structure that is explained below.
 
-- "../pages": This folder contains the files that correspond to each page.
-- "../pageTemplates": This folder contains the templates that each of the pages will use.
-- "../web": This folder contains the production files.
+- "./pages": This folder contains the files that correspond to each page.
+- "./pageTemplates": This folder contains the templates that each of the pages will use.
+- "./web": This folder contains the production files.
 
 Now we can do a couple of tests to see how it works. Open the file "./pageTemplates/index.html" and add the following lines.
 
@@ -68,9 +68,17 @@ Now we can do a couple of tests to see how it works. Open the file "./pageTempla
 </html>
 ~~~
 
-As you can see, we have common HTML tags except for "<!-headHTML->" and "<!-bodyHTML->" which we will explain below. But first check the file "./web/index.html" and you will see that it is empty, execute Command # 1 again and check this same file again, if all goes well, you will see how the code has been copied from the template to the production file.
+As you can see, we have common HTML tags except for "&lt;!&#45;&#45;headHTML&#45;&#45;&gt;" and "&lt;!&#45;&#45;bodyHTML&#45;&#45;&gt;" which we will explain below. But first check the file "./web/index.html" and you will see that it is empty, execute Command # 1 again and check this same file again, if all goes well, you will see how the code has been copied from the template to the production file.
 
-Now the tags "<!-headHTML->" and "<!-bodyHTML->" tell the template that the tags are in the files "./pages/head.html" and "./pages/body.html" and to be added respectively. Knowing this, we will modify the following files.
+* "&lt;!&#45;&#45;headHTML&#45;&#45;&gt;": You can use this statement so that the unique HTML tags in the page header appear instead when the production files are updated.
+* "&lt;!&#45;&#45;bodyHTML&#45;&#45;&gt;": You can use this statement so that the unique HTML tags in the page body appear instead when the production files are updated.
+
+The following tags can also be used.
+
+* "&lt;&lt;ROOT-DIR&gt;&gt;": You can use this declaration so that when the production files are updated, the project root appears instead. So if you put "&lt;&lt;ROOT-DIR&gt;&gt;src/example/main.min.js", something like "../../src/example/main.min.js" will appearaccording to the location in the folder tree.
+* "&lt;&lt;DIR&gt;&gt;": This tag does the same as the previous one but places the path one level lower in the file tree.
+
+Understanding the above, we can make the following modification.
 
 **File: ./pages/head.html**
 
@@ -135,7 +143,9 @@ If you don't specify a template for each page you create, Command #1 defaults to
 </script>
 ~~~
 
-See how the first line ("<!-Route: temp2.html->") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
+See how the first line ("&lt;!&#45;&#45;Route: temp2.html&#45;&#45;&gt;") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
+
+***THE DOCUMENTATION IS BEING REVIEWED FROM HERE.***
 
 <span id="TheProcessSql"></span>
 ## The process sql ##
