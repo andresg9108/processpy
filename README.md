@@ -53,7 +53,7 @@ Now we can do a couple of tests to see how it works. Open the file "./pageTempla
 
 **File: ./pageTemplates/index.html**
 
-~~~
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -63,7 +63,7 @@ Now we can do a couple of tests to see how it works. Open the file "./pageTempla
     <!--bodyHTML-->
   </body>
 </html>
-~~~
+```
 
 As you can see, we have common HTML tags except for "&lt;!&#45;&#45;headHTML&#45;&#45;&gt;" and "&lt;!&#45;&#45;bodyHTML&#45;&#45;&gt;" which we will explain below. But first check the file "./web/index.html" and you will see that it is empty, execute Command # 1 again and check this same file again, if all goes well, you will see how the code has been copied from the template to the production file.
 
@@ -79,15 +79,15 @@ Understanding the above, we can make the following modification.
 
 **File: ./pages/head.html**
 
-~~~
+```html
 <title>My Page</title>
-~~~
+```
 
 **File: ./pages/body.html**
 
-~~~
+```html
 <h1>Hello World!!!</h1>
-~~~
+```
 
 We execute Command # 1 again and all changes will be detected in the production file "./web/index.html".
 
@@ -95,18 +95,18 @@ With all of the above we already know how this command works in general. Now we 
 
 **File: ./pages/page2/head.html**
 
-~~~
+```html
 <title>This is my page number 2.</title>
 <script>
   console.log('Hello World!!!');
 </script>
-~~~
+```
 
 **File: ./pages/page2/body.html**
 
-~~~
+```html
 <h1>Hello, this is my page number 2.</h1>
-~~~
+```
 
 Now you can run Command #1 again and if everything goes well you can check the production path "./web/", where you can now find two pages with different contents.
 
@@ -114,7 +114,7 @@ Last but not least, we will create a new template. In the path "./pageTemplates/
 
 **File: ./pageTemplates/temp2.html**
 
-~~~
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -126,19 +126,19 @@ Last but not least, we will create a new template. In the path "./pageTemplates/
     </div>
   </body>
 </html>
-~~~
+```
 
 If you don't specify a template for each page you create, Command #1 defaults to the template "./pageTemplates/index.html", but if you want the template "temp2.html" to be taken for the page "page2" the following should be added in the first line of the file "./pages/page2/head.html".
 
 **File: ./pages/page2/head.html**
 
-~~~
+```html
 <!--Route: temp2.html-->
 <title>This is my page number 2.</title>
 <script>
-	console.log('Hello World!!!');
+  console.log('Hello World!!!');
 </script>
-~~~
+```
 
 See how the first line ("&lt;!&#45;&#45;Route: temp2.html&#45;&#45;&gt;") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
 
