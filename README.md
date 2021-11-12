@@ -142,8 +142,6 @@ If you don't specify a template for each page you create, Command #1 defaults to
 
 See how the first line ("&lt;!&#45;&#45;Route: temp2.html&#45;&#45;&gt;") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
 
-***THE DOCUMENTATION IS BEING REVIEWED FROM HERE.***
-
 ## The process sql <span name="TheProcessSql"></span> ##
 
 This command allows you to take all the ".sql" files in a folder and convert them into one file.
