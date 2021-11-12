@@ -4,25 +4,23 @@
 
 ## Content ##
 
-1. [Introduction.](#Introduction "Introduction")
-2. [Dependencies.](#Dependencies "Dependencies")
-3. [Getting Started.](#GettingStarted "Getting Started")
-4. [The process html.](#TheProcessHtml "The process html")
-5. [The process sql.](#TheProcessSql "The process sql")
-6. [Replace text string.](#ReplaceTextString "Replace text string")
+1. [Introduction][]
+2. [Dependencies][]
+3. [Getting Started][]
+4. [The process html][]
+5. [The process sql][]
+6. [Replace text string][]
 
-<span id="Introduction"></span>
-## Introduction ##
+## Introduction [MultiMarkdownOverview] ##
 
 This project aims to automate repetitive processes or patterns using the great Python programming language.
 
-<span id="Dependencies"></span>
-## Dependencies ##
+## Dependencies [MultiMarkdownOverview] ##
+
 - Node.js (https://nodejs.org).
 - Python (https://www.python.org): Download Python and add it to the path of your operating system.
 
-<span id="GettingStarted"></span>
-## Getting Started ##
+## Getting Started [MultiMarkdownOverview] ##
 
 We will start by installing the processpy package in the folder where we want to use it as follows.
 
@@ -36,8 +34,7 @@ If all goes well now we can use processpy.
 python node_modules/processpy/process.py -help
 ~~~
 
-<span id="TheProcessHtml"></span>
-## The process html ##
+## The process html [MultiMarkdownOverview] ##
 
 This command will allow you to create HTML files from other files. To do this we have the following command.
 
@@ -147,8 +144,7 @@ See how the first line ("&lt;!&#45;&#45;Route: temp2.html&#45;&#45;&gt;") tells 
 
 ***THE DOCUMENTATION IS BEING REVIEWED FROM HERE.***
 
-<span id="TheProcessSql"></span>
-## The process sql ##
+## The process sql [MultiMarkdownOverview] ##
 
 This command allows you to take all the ".sql" files in a folder and convert them into one file.
 
@@ -170,8 +166,7 @@ python node_modules/processpy/process.py -sql ./myfile.sql ./sql
 
 If all goes well, you will have a file called "myfile.sql" in the current path that will contain all the lines of all the files that are in the "sql" folder.
 
-<span id="ReplaceTextString"></span>
-## Replace text string ##
+## Replace text string [MultiMarkdownOverview] ##
 
 This command will allow you to replace a text string in all files in a directory.
 

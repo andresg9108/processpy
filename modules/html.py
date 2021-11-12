@@ -1,5 +1,5 @@
 import glob, sys, shutil, time
-from python_modules.processpy import useful
+from . import useful
 from os import mkdir, remove, path, scandir, getcwd
 
 def loadAdditionalFilesAndFolders(sTemplateRoute):
