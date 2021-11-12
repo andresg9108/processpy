@@ -5,24 +5,22 @@
 ## Content ##
 
 1. [Introduction.](#Introduction "Introduction")
-2. [Dependencies.](#Dependencies "Dependencies")
-3. [Starting.](#Starting "Starting")
-4. [The process html.](#TheProcessHtml "The process html")
-5. [The process sql.](#TheProcessSql "The process sql")
-6. [Replace text string.](#ReplaceTextString "Replace text string")
+2. [Dependencies.](#Dependencies "")
+3. [Getting started.](#GettingStarted "")
+4. [The process html.](#TheProcessHtml "")
+5. [The process sql.](#TheProcessSql "")
+6. [Replace text string.](#ReplaceTextString "")
 
-<span id="Introduction"></span>
-## Introduction ##
+## Introduction <span name="Introduction"></span> ##
 
 This project aims to automate repetitive processes or patterns using the great Python programming language.
 
-<span id="Dependencies"></span>
-## Dependencies ##
+## Dependencies <span name="Dependencies"></span> ##
+
 - Node.js (https://nodejs.org).
 - Python (https://www.python.org): Download Python and add it to the path of your operating system.
 
-<span id="Starting"></span>
-## Starting ##
+## Getting started <span name="GettingStarted"></span> ##
 
 We will start by installing the processpy package in the folder where we want to use it as follows.
 
@@ -36,8 +34,7 @@ If all goes well now we can use processpy.
 python node_modules/processpy/process.py -help
 ~~~
 
-<span id="TheProcessHtml"></span>
-## The process html ##
+## The process html <span name="TheProcessHtml"></span> ##
 
 This command will allow you to create HTML files from other files. To do this we have the following command.
 
@@ -48,15 +45,15 @@ python node_modules/processpy/process.py -html
 
 This command should create a couple of files and folders on top of the current folder and with this we already have the structure that is explained below.
 
-- "../pages": This folder contains the files that correspond to each page.
-- "../pageTemplates": This folder contains the templates that each of the pages will use.
-- "../web": This folder contains the production files.
+- "./pages": This folder contains the files that correspond to each page.
+- "./pageTemplates": This folder contains the templates that each of the pages will use.
+- "./web": This folder contains the production files.
 
 Now we can do a couple of tests to see how it works. Open the file "./pageTemplates/index.html" and add the following lines.
 
 **File: ./pageTemplates/index.html**
 
-~~~
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -66,23 +63,31 @@ Now we can do a couple of tests to see how it works. Open the file "./pageTempla
     <!--bodyHTML-->
   </body>
 </html>
-~~~
+```
 
-As you can see, we have common HTML tags except for "<!-headHTML->" and "<!-bodyHTML->" which we will explain below. But first check the file "./web/index.html" and you will see that it is empty, execute Command # 1 again and check this same file again, if all goes well, you will see how the code has been copied from the template to the production file.
+As you can see, we have common HTML tags except for "&lt;!&#45;&#45;headHTML&#45;&#45;&gt;" and "&lt;!&#45;&#45;bodyHTML&#45;&#45;&gt;" which we will explain below. But first check the file "./web/index.html" and you will see that it is empty, execute Command # 1 again and check this same file again, if all goes well, you will see how the code has been copied from the template to the production file.
 
-Now the tags "<!-headHTML->" and "<!-bodyHTML->" tell the template that the tags are in the files "./pages/head.html" and "./pages/body.html" and to be added respectively. Knowing this, we will modify the following files.
+* "&lt;!&#45;&#45;headHTML&#45;&#45;&gt;": You can use this statement so that the unique HTML tags in the page header appear instead when the production files are updated.
+* "&lt;!&#45;&#45;bodyHTML&#45;&#45;&gt;": You can use this statement so that the unique HTML tags in the page body appear instead when the production files are updated.
+
+The following tags can also be used.
+
+* "&lt;&lt;ROOT-DIR&gt;&gt;": You can use this declaration so that when the production files are updated, the project root appears instead. So if you put "&lt;&lt;ROOT-DIR&gt;&gt;src/example/main.min.js", something like "../../src/example/main.min.js" will appearaccording to the location in the folder tree.
+* "&lt;&lt;DIR&gt;&gt;": This tag does the same as the previous one but places the path one level lower in the file tree.
+
+Understanding the above, we can make the following modification.
 
 **File: ./pages/head.html**
 
-~~~
+```html
 <title>My Page</title>
-~~~
+```
 
 **File: ./pages/body.html**
 
-~~~
+```html
 <h1>Hello World!!!</h1>
-~~~
+```
 
 We execute Command # 1 again and all changes will be detected in the production file "./web/index.html".
 
@@ -90,18 +95,18 @@ With all of the above we already know how this command works in general. Now we 
 
 **File: ./pages/page2/head.html**
 
-~~~
+```html
 <title>This is my page number 2.</title>
 <script>
   console.log('Hello World!!!');
 </script>
-~~~
+```
 
 **File: ./pages/page2/body.html**
 
-~~~
+```html
 <h1>Hello, this is my page number 2.</h1>
-~~~
+```
 
 Now you can run Command #1 again and if everything goes well you can check the production path "./web/", where you can now find two pages with different contents.
 
@@ -109,7 +114,7 @@ Last but not least, we will create a new template. In the path "./pageTemplates/
 
 **File: ./pageTemplates/temp2.html**
 
-~~~
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -121,24 +126,23 @@ Last but not least, we will create a new template. In the path "./pageTemplates/
     </div>
   </body>
 </html>
-~~~
+```
 
 If you don't specify a template for each page you create, Command #1 defaults to the template "./pageTemplates/index.html", but if you want the template "temp2.html" to be taken for the page "page2" the following should be added in the first line of the file "./pages/page2/head.html".
 
 **File: ./pages/page2/head.html**
 
-~~~
+```html
 <!--Route: temp2.html-->
 <title>This is my page number 2.</title>
 <script>
-	console.log('Hello World!!!');
+  console.log('Hello World!!!');
 </script>
-~~~
+```
 
-See how the first line ("<!-Route: temp2.html->") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
+See how the first line ("&lt;!&#45;&#45;Route: temp2.html&#45;&#45;&gt;") tells this page which template to use and in this case it is "temp2.html". Now we execute Command #1 for the last time and if all goes well we will have two pages using two different templates.
 
-<span id="TheProcessSql"></span>
-## The process sql ##
+## The process sql <span name="TheProcessSql"></span> ##
 
 This command allows you to take all the ".sql" files in a folder and convert them into one file.
 
@@ -160,8 +164,7 @@ python node_modules/processpy/process.py -sql ./myfile.sql ./sql
 
 If all goes well, you will have a file called "myfile.sql" in the current path that will contain all the lines of all the files that are in the "sql" folder.
 
-<span id="ReplaceTextString"></span>
-## Replace text string ##
+## Replace text string <span name="ReplaceTextString"></span> ##
 
 This command will allow you to replace a text string in all files in a directory.
 
