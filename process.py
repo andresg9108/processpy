@@ -5,6 +5,7 @@ from modules import html
 from modules import sql
 from modules import rts
 from modules import help
+from modules import calendar
 
 sTemplateRoute = './pageTemplates'
 sInitialRoute = './pages'
@@ -29,6 +30,13 @@ try:
 		sSearchText = sys.argv[3]
 		sReplaceText = sys.argv[4]
 		rts.LoadNewTextString(sFolderPath, sSearchText, sReplaceText)
+	elif sArgv == '-cal':
+		iParametersNumber = len(sys.argv)
+		if iParametersNumber == 2:
+			calendar.printCalendar()
+		else:
+			sDate = sys.argv[2]
+			calendar.printCalendar(sDate)
 	elif sArgv == '-help':
 		help.showHelpFile()
 	else:

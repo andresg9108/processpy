@@ -5,7 +5,7 @@ Documentation: https://github.com/andresg9108/processpy#readme
 
 -help => This command.
 -html => The process html.
--sql => The process sql.
--rts => Replace text string.
+-sql [parameters] => The process sql.
+-rts [parameters] => Replace text string.
 
 ----------------------------
