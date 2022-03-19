@@ -5,11 +5,12 @@
 ## Content ##
 
 1. [Introduction.](#Introduction "Introduction")
-2. [Dependencies.](#Dependencies "")
-3. [Getting started.](#GettingStarted "")
-4. [The process html.](#TheProcessHtml "")
-5. [The process sql.](#TheProcessSql "")
-6. [Replace text string.](#ReplaceTextString "")
+2. [Dependencies.](#Dependencies "Dependencies")
+3. [Getting started.](#GettingStarted "Getting started")
+4. [The process html.](#TheProcessHtml "The process html")
+5. [The process sql.](#TheProcessSql "The process sql")
+6. [Replace text string.](#ReplaceTextString "Replace text string")
+7. [Calendar.](#Calendar "Calendar")
 
 ## Introduction <span name="Introduction"></span> ##
 
@@ -185,3 +186,27 @@ python node_modules/processpy/process.py -rts ./data "Old string" "New string"
 ~~~
 
 If all goes well, the text string will be replaced in all files in the folder.
+
+## Calendar <span name="Calendar"></span> ##
+
+This command will allow us to print a calendar by console defining the month and the year.
+
+For this example, we will create a new separate directory and install "processpy" to it. Now we can execute the following command in which "(DATE)" is a text string that will contain the year and month that we want to print on the console, the string will have the following syntax "2022-03", in this case it should print the month of March 2022.
+
+**Command #4**
+
+~~~
+python node_modules/processpy/process.py -cal (DATE)
+~~~
+
+For this example, the command would look like this.
+
+~~~
+python node_modules/processpy/process.py -cal '2022-03'
+~~~
+
+If you run the command without including the text string as shown below, it should print the current month to the console.
+
+~~~
+python node_modules/processpy/process.py -cal
+~~~

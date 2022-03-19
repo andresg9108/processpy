@@ -1,11 +1,12 @@
 
-Processpy commands: Run "python process.py [command]".
+Processpy commands: Run "python node_modules/processpy/process.py [command]".
 
 Documentation: https://github.com/andresg9108/processpy#readme
 
 -help => This command.
 -html => The process html.
--sql => The process sql.
--rts => Replace text string.
+-sql [parameters] => The process sql.
+-rts [parameters] => Replace text string.
+-cal [parameters] => Calendar.
 
 ----------------------------
