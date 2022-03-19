@@ -31,8 +31,7 @@ try:
 		sReplaceText = sys.argv[4]
 		rts.LoadNewTextString(sFolderPath, sSearchText, sReplaceText)
 	elif sArgv == '-cal':
-		iParametersNumber = len(sys.argv)
-		if iParametersNumber == 2:
+		if len(sys.argv) == 2:
 			calendar.printCalendar()
 		else:
 			sDate = sys.argv[2]
