@@ -1,4 +1,4 @@
-import glob, sys, shutil, time
+import glob, sys, shutil, time, os
 from . import useful
 from os import mkdir, remove, path, scandir, getcwd
 
@@ -10,28 +10,20 @@ def loadSQLFile(sFilePath, sFolderPath):
 		sFolderPath = sFolderPath[:-1]
 
 	if path.exists(sFolderPath):
-		aFile = useful.lsFiles(sFolderPath)
-		# aFile.reverse()
-		aFile.sort()
+		aFile = []
+		for root, dirs, files in os.walk(sFolderPath):
+			for name in sorted(files):
+				if useful.getFileExtension(name) == '.sql':
+					aFile.append(path.join(root, name))
 
 		aFinalContent = []
-		for sFile in aFile:
-			sExtension = useful.getFileExtension(sFile)
-			if sExtension == '.sql':
-				sFileP = sFolderPath+'/'+sFile
-
-				oFile = open(sFileP, "r")
+		for sFileP in aFile:
+			with open(sFileP, "r") as oFile:
 				aContent = oFile.readlines()
-				oFile.close()
+			aContent.append('\n')
+			aFinalContent += aContent
 
-				aContent.append('\n')
-				aFinalContent = aFinalContent + aContent
+		aFinalContent = [' ' + line for line in aFinalContent]
 
-		iCount = 0
-		for sLine in aFinalContent:
-			aFinalContent[iCount] = ' ' + sLine
-			iCount = iCount + 1
-
-		oFile = open(sFilePath, "w")
-		oFile.writelines(aFinalContent)
-		oFile.close()
+		with open(sFilePath, "w") as oFile:
+			oFile.writelines(aFinalContent)
