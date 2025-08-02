@@ -12,6 +12,7 @@ def loadSQLFile(sFilePath, sFolderPath):
 	if path.exists(sFolderPath):
 		aFile = []
 		for root, dirs, files in os.walk(sFolderPath):
+			dirs.sort()
 			for name in sorted(files):
 				if useful.getFileExtension(name) == '.sql':
 					aFile.append(path.join(root, name))
